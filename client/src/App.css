@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+a {
+  text-decoration: none;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 750px;
+  padding: 29px;
+  color: #333333;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Styles for common elements */
+
+h2 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 39px;
+  margin: 0 15px;
+}
+
+.button-turquoise {
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  background-color: #00bbb0;
+  border: none;
+  border-radius: 20px;
+}
+
+.button-turquoise--main {
+  padding: 10px 20px;
+}
+
+.button-turquoise--large {
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.button-turquoise--small {
+  padding: 5px 20px;
+}
+
+.button-grey {
+  display: inline-block;
+  padding: 6px;
+  color: #929292;
+  background-color: #d9d9d9;
+  border: none;
+  border-radius: 20px;
+  width: 28px;
+  height: 28px;
+}
+
+/* ----- StartScreen ----- */
+
+.start-screen {
+  margin-top: 100px;
+}
+
+.start-screen__logo {
+  width: 100px;
+}
+
+.start-screen__title {
+  font-size: 45px;
+  font-weight: 700;
+  color: #A7A7A7;
+}
+
+.start-screen__description {
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 600;
+  max-width: 350px;
+  margin: 50px auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+@media screen and (min-width: 300px) {
+  .start-screen__title {
+    font-size: 64px;
+  }
+}
+
+/* ----- Home ----- */
+
+.home {
+  max-width: 568px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Weather */
+
+.home__weather__items {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto 25px auto;
+}
+
+.home__weather__items .weather:first-child {
+  margin-left: 0;
+}
+
+.home__weather__items .weather:last-child {
+  margin-right: 0;
+}
+
+/* My Trips */
+
+.home__my-trips__title,
+.home__my-trips__buttons {
+  display: inline-block;
+  /* fallback for flexbox */
+}
+
+.home__my-trips__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home__my-trips__items {
+  margin: 20px auto 25px auto;
+}
+
+.home__my-trips__items .trip:last-child {
+  margin-bottom: 0px;
+}
+
+/* My rewards */
+
+.home__my-rewards__title,
+.home__my-rewards__button--see-all {
+  display: inline-block;
+  /* fallback for flexbox */
+}
+
+.home__my-rewards__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home__my-rewards__items {
+  margin: 20px auto 0 auto;
+}
+
+/* Common for my trips and my rewards */
+
+.home__my-trips__button--see-all,
+.home__my-trips__button--add-trip,
+.home__my-rewards__button--see-all {
+  margin-left: 14px;
+}
+
+/* ----- Header ----- */
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.switch-container {
+  display: flex;
+  align-items: center;
+}
+
+.eco-mode {
+  font-weight: 600;
+  color: #929292;
+}
+
+.back-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* TripPreview */
+
+.trip__link {
+  /* display: inline-block; */
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0 auto 18px auto;
+  padding: 16px 16px 11px 16px;
+  border-radius: 10px;
+  background-color: #F1F2F2;
+  color: #333333;
+}
+
+.trip-preview {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.trip-preview__goal-chart {
+  margin-right: 15px;
+}
+
+.trip-preview__trip-info__airport-codes {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.trip-preview__trip-info__date {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.trip-preview__status {
+  color: #8A8A8A;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: right;
+}
