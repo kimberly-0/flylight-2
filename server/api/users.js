@@ -40,13 +40,13 @@ usersRouter.get('/', (req, res, next) => {
         if (err) {
             next(err);
         } else {
-            res.status(200).json({users: users});
+            res.status(200).json(users);
         }
     });
 });
 
 usersRouter.get('/:userId', (req, res, next) => {
-    res.status(200).send({user: req.user});
+    res.status(200).send(req.user);
 });
 
 /*
