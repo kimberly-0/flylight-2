@@ -1,32 +1,32 @@
-import "./App.css"
-import { Routes, Route } from "react-router-dom"
+import './App.css'
+import { Routes, Route } from 'react-router-dom'
 import { useUser } from './hooks/useUser'
 import Start from './components/StartPage'
 import Home from './components/HomePage'
-
-import TripList from './components/TripList'
+import TripsPage from './components/TripsPage'
+import TripPage from './components/TripPage'
+import AddTripPage from './components/AddTripPage'
+import EditTripPage from './components/EditTripPage'
+import RewardsPage from './components/RewardsPage'
 
 function App() {
 
-  const currentUserId = Number(useUser().id)
+  const currentUserId = Number(useUser()?.id)
   console.log("Current user: " + JSON.stringify(currentUserId))
 
   return (
     <div className='App'>
         <Routes>
-          {/* <Route path='/' element={<TripList currentUser={currentUser} />} /> */}
-
           <Route path='/' element={<Start />} />
           <Route path='/home' element={<Home userId={currentUserId} />} />
-
-          {/* <Route path='/add-trip'element={<AddTrip user={currentUser} />} />
-          <Route path='/my-trips-summary' element={<Trips user={currentUser} />} />
-          <Route path='/trips/:id' element={<MyTrip user={currentUser} />} />
-          <Route path='/edit-trip/:id' element={<EditMyTrip user={currentUser} />} />
-          <Route path='/my-rewards' element={<MyRewards user={currentUser} />} /> */}
+          <Route path='/trips' element={<TripsPage userId={currentUserId} />} />
+          <Route path='/trips/:id' element={<TripPage userId={currentUserId} />} />
+          <Route path='/add-trip'element={<AddTripPage userId={currentUserId} />} />
+          <Route path='/edit-trip/:id' element={<EditTripPage userId={currentUserId} />} />
+          <Route path='/rewards' element={<RewardsPage userId={currentUserId} />} />
         </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
