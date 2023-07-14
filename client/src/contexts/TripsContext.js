@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useAsync } from '../hooks/useAsync'
-import { useUser } from '../hooks/useUser'
+// import { useUser } from '../hooks/useUser'
 import { getTrips } from '../services/userTrips'
 
 const Context = React.createContext()
