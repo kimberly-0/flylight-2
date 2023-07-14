@@ -1,15 +1,15 @@
 import React from 'react'
-// import GoalChart from '../GoalChart/GoalChart'
+import GoalChart from './GoalChart'
 import { Link } from 'react-router-dom'
 
 export default function TripPreview({ trip }) {
   return (
-    <Link to={`/trips/${trip.id}`} className="trip__link">
+    <Link to={`/trips/${trip.id}`} state={{trip: trip}} className="trip__link">
     {/* Ensure it links to the correct trip that is showing */}
 
         <div className="trip-preview__goal-chart">
           {/* Make percentage dynamic based on goal set for the trip (calcualte both carry-on + hold luggage together */}
-          {/* <GoalChart percentage={40} />  */}
+          <GoalChart percentage={40} /> 
         </div>
 
         <div className="trip-preview">
