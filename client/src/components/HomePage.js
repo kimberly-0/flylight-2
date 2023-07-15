@@ -1,15 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Header from './Header'
+import { useAsync } from '../hooks/useAsync'
+import { getTrips } from '../services/userTrips'
 import TripsList from './TripsList'
 import WeatherItem from './WeatherItem'
 import RewardStatus from './RewardStatus'
-import { ReactComponent as PlusIcon } from '../assets/Plus_icon.svg'
 
 export default function HomePage({ userId }) {
+
+    const { loading, error, value: trips } = useAsync(() => getTrips({ userId }), [userId])
+
+    if (loading) return <h1>Loading</h1>
+
+    if (error) return <h1 className="error-msg">{error}</h1>
+
+    // console.log("Trips: " + JSON.stringify(trips))
+
     return (
         <div className="home">
-            <Header />
 
             <div className="home__weather">
                 <h2 className="home__weather__title">Weather for my next trip</h2>
@@ -22,21 +30,7 @@ export default function HomePage({ userId }) {
                 </div>
             </div>
 
-            <div className="home__my-trips">
-
-                <div className="home__my-trips__header">
-                    <h2 className="home__my-trips__title">My trips</h2>
-                    <div className="home__my-trips__buttons">
-                        <Link to="/trips" className="home__my-trips__button--see-all button-turquoise button-turquoise--small">See all</Link>
-                        <Link to="/add-trip" className="home__my-trips__button--add-trip button-grey"><PlusIcon /></Link>
-                    </div>
-                </div>
-
-                <div className="home__my-trips__items">
-                    <TripsList userId={userId} shortList={true} />
-                </div>
-
-            </div>
+            <TripsList userId={userId} shortList={true} />
 
             <div className="home__my-rewards">
                 <div className="home__my-rewards__header">
@@ -47,6 +41,7 @@ export default function HomePage({ userId }) {
                     <RewardStatus userId={userId} />
                 </div>
             </div>
+
         </div>
     )
 }
