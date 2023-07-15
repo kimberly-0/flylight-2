@@ -17,6 +17,11 @@ export default function Header() {
     const navigate = useNavigate()
     const location = useLocation()
 
+    const hideBackButtonPaths = [
+        "/",
+        // "/home"
+    ]
+
     // function handleNavigation() {
     //     const navBackTarget = location.state?.navBackTarget || null
     //     if (navBackTarget && Object.values(NAV_TARGETS).includes(navBackTarget)) {
@@ -30,10 +35,13 @@ export default function Header() {
 
     return (
         <div className='header-container'>
-            <button className='back-btn' onClick={() => navigate(-1)}>
-                <img src={backIcon} alt="back button" />
-            </button>
 
+            {!hideBackButtonPaths.some(excludedPath => location.pathname === excludedPath) &&
+                <button className='back-btn' onClick={() => navigate(-1)}>
+                    <img src={backIcon} alt="back button" />
+                </button>
+            }
+            
             <div className='switch-container'>
                 <p className='eco-mode'>ECO</p>
                 <ECOSwitch />
