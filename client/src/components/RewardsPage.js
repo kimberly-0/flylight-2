@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import Header from "./Header"
 import RewardStatus from "./RewardStatus"
 // import RewardHistoryItem from "./RewardHistoryItem"
 
@@ -11,8 +10,6 @@ export default function RewardsPage({ userId }) {
 
   return (
     <>
-      <Header />
-
       <div className="my-rewards__header">
         <h2 className="my-rewards__title">My Rewards</h2>
         <Link

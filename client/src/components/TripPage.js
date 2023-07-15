@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, useLocation, useNavigate } from "react-router-dom"
-import Header from './Header'
 import { ReactComponent as PencilIcon } from '../assets/Pencil_icon.svg'
 import { useAsyncFn } from '../hooks/useAsync'
 import { deleteTrip } from '../services/userTrips'
@@ -33,7 +32,6 @@ export default function TripPage({ userId }) {
 
     return (
         <div className="my-trip">
-            <Header/>
             <h2 className="my-trip__title">To {trip.destination_airport_code}</h2>
 
             <div className="my-trip__item">

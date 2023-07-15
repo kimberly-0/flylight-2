@@ -49,8 +49,6 @@ export default function EditTripPage({ userId }) {
 
     return (
         <div className="trip-form">
-            <Header />
-
             <h2>Edit Trip</h2>
             <h4 className='tripform--subtitle'>Enter Flight Details</h4>
 
