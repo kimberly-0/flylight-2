@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
 import { useAsync } from '../hooks/useAsync'
 import { getTrips } from '../services/userTrips'
+import { Link } from 'react-router-dom'
 import TripPreview from './TripPreview'
 import { ReactComponent as PlusIcon } from '../assets/Plus_icon.svg'
 import { ReactComponent as Arrow } from '../assets/Arrow.svg'
@@ -13,12 +13,10 @@ export default function TripsList({ userId, shortList }) {
 
     if (error) return <h1 className="error-msg">{error}</h1>
 
-    // console.log("Trips: " + JSON.stringify(trips))
-
     const numOfListItems = shortList ? 2 : trips.length
 
     return (
-        <div className="home__my-trips">
+        <div className="my-trips">
 
             <div className="home__my-trips__header">
                 <h2 className="home__my-trips__title">My trips</h2>
