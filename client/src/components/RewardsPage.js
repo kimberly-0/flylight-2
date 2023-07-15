@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
-import RewardStatus from "./RewardStatus"
+import { Link } from 'react-router-dom'
+import RewardStatus from './RewardStatus'
 // import RewardHistoryItem from "./RewardHistoryItem"
 
 // import formatDate from "../utils/formatDate"
