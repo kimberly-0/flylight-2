@@ -4,7 +4,7 @@ import { useUser } from './hooks/useUser'
 import Header from './components/Header'
 import Start from './components/StartPage'
 import Home from './components/HomePage'
-import TripsPage from './components/TripsPage'
+import TripsList from './components/TripsList'
 import TripPage from './components/TripPage'
 import AddTripPage from './components/AddTripPage'
 import EditTripPage from './components/EditTripPage'
@@ -19,10 +19,10 @@ function App() {
     <div className='App'>
         <Header />
 
-        <Routes>
+        <Routes>          
           <Route path='/' element={<Start />} />
           <Route path='/home' element={<Home userId={currentUserId} />} />
-          <Route path='/trips' element={<TripsPage userId={currentUserId} />} />
+          <Route path='/trips' element={<TripsList userId={currentUserId} />} />
           <Route path='/trips/:id' element={<TripPage userId={currentUserId} />} />
           <Route path='/add-trip'element={<AddTripPage userId={currentUserId} />} />
           <Route path='/edit-trip/:id' element={<EditTripPage userId={currentUserId} />} />
